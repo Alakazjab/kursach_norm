@@ -1,7 +1,7 @@
 ﻿
 namespace kursach
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -62,6 +62,7 @@ namespace kursach
             this.button1.TabIndex = 2;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -81,6 +82,7 @@ namespace kursach
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Зарегистрироваться";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
             // 
