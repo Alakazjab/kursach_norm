@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace kursach
 {
-    public partial class Register : Form
+    public partial class MainForm : Form
     {
-        public Register(string data)
+        public MainForm(string data)
         {
             InitializeComponent();
         }
