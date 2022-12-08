@@ -28,26 +28,23 @@ namespace kursach
         {
              if (new EmailAddressAttribute().IsValid(textBox1.Text))
              {
-                if (textBox2.Text != "")
-                {
-                    NpgsqlConnection con = new NpgsqlConnection();
+                string passwordHash = BCrypt.Net.BCrypt.HashPassword(textBox2.Text);
+                NpgsqlConnection con = new NpgsqlConnection();
                     con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                     NpgsqlCommand cmd = new NpgsqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = 
-                        "Select * from kursach.users where email=\'"
-                        + textBox1.Text +"\' and password =\'" + BCrypt.Net.BCrypt.HashPassword(textBox2.Text) + "\';";
+                    cmd.CommandText = "Select * from kursach.users where email=\'" + textBox1.Text + "\';";
                     con.Open();
                     NpgsqlDataReader rdr = cmd.ExecuteReader();
-                    ArrayList records = new ArrayList();
-                    if (rdr.HasRows)
+                    rdr.Read();
+                    if (rdr.HasRows && BCrypt.Net.BCrypt.Verify(rdr.GetString(1), passwordHash))
                     {
                         childForm1 = new MainForm(textBox1.Text);
                         childForm1.Show();
                     }
                     else
                     {
-                        string message = BCrypt.Net.BCrypt.HashPassword(textBox2.Text);
+                        string message = passwordHash;
                         string caption = "Ошибка входа";
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         DialogResult result;
@@ -55,17 +52,7 @@ namespace kursach
                         result = MessageBox.Show(message, caption, buttons);
                         con.Close();
                     }         
-                }
-                else
-                {
-                    string message = "Поля логин и пароль должны быть заполнены";
-                    string caption = "Ошибка входа";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult result;
-                    // Displays the MessageBox.
-                    result = MessageBox.Show(message, caption, buttons);
-                }
-                    
+                                                  
              }
              else
             {
