@@ -11,6 +11,7 @@ using System.ComponentModel.DataAnnotations;
 using Npgsql;
 using System.Collections;
 using System.Data.Common;
+using System.Security.Cryptography;
 
 namespace kursach
 {
@@ -18,7 +19,6 @@ namespace kursach
     {
         Register childForm;
         MainForm childForm1;
-        public string data;
         public Login()
         {
             InitializeComponent();
@@ -42,15 +42,12 @@ namespace kursach
                     ArrayList records = new ArrayList();
                     if (rdr.HasRows)
                     {
-                        foreach (DbDataRecord rec in rdr)
-                            records.Add(rec);
-                        con.Close();
-                        childForm1 = new MainForm(data);
+                        childForm1 = new MainForm(textBox1.Text);
                         childForm1.Show();
                     }
                     else
                     {
-                        string message = "Пользователя с данными логином и паролем не существует";
+                        string message = BCrypt.Net.BCrypt.HashPassword(textBox2.Text);
                         string caption = "Ошибка входа";
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         DialogResult result;
@@ -72,7 +69,7 @@ namespace kursach
              }
              else
             {
-                string message = "поле логин заполнено неверно";
+                string message = "поле email заполнено неверно";
                 string caption = "Ошибка входа";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
@@ -83,7 +80,7 @@ namespace kursach
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            childForm = new Register(data);
+            childForm = new Register(textBox1.Text);
             childForm.Show();
         }
     }
