@@ -16,7 +16,7 @@ namespace kursach
     public partial class Register : Form
     {
         MainForm childForm;
-        public Register(string data)
+        public Register()
         {
             InitializeComponent();
         }
@@ -46,6 +46,7 @@ namespace kursach
                         cmd.ExecuteReader();
                         childForm = new MainForm(textBox1.Text);
                         childForm.Show();
+                        this.Close();
                         con.Close();
                     }
                     else

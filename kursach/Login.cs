@@ -17,7 +17,7 @@ namespace kursach
 {
     public partial class Login : Form
     {
-        Register childForm;
+        
         MainForm childForm1;
         public Login()
         {
@@ -37,10 +37,11 @@ namespace kursach
                     con.Open();
                     NpgsqlDataReader rdr = cmd.ExecuteReader();
                     rdr.Read();
-                    if (rdr.HasRows && BCrypt.Net.BCrypt.Verify(rdr.GetString(1), passwordHash))
+                    if (rdr.HasRows && BCrypt.Net.BCrypt.Verify(textBox2.Text, rdr.GetString(1)))
                     {
                         childForm1 = new MainForm(textBox1.Text);
                         childForm1.Show();
+                        this.Visible = false;
                     }
                     else
                     {
@@ -67,8 +68,9 @@ namespace kursach
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            childForm = new Register(textBox1.Text);
+            Register childForm = new Register();
             childForm.Show();
+            this.Visible=false;
         }
     }
 }

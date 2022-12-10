@@ -123,7 +123,7 @@ namespace kursach
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Register";
-            this.Text = "p";
+            this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
