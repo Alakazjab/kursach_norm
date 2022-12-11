@@ -18,6 +18,8 @@ namespace kursach
     {
         public string a;
         public string table;
+        public string update;
+
         public AdminForm(string data)
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace kursach
         }
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            dataGridView1.ContextMenuStrip = contextMenuStrip1;
             NpgsqlConnection con = new NpgsqlConnection();
             con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
             NpgsqlCommand cmd = new NpgsqlCommand();
@@ -477,6 +480,65 @@ namespace kursach
                 result = MessageBox.Show(message, caption, buttons);
             }
         }
-       
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           // contextMenuStrip1.Show();
+        }
+
+        private void применитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                NpgsqlConnection con = new NpgsqlConnection();
+                con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"update  kursach." + table + " set " + toolStripTextBox4 + ".\"" + toolStripTextBox2.Text + "\" = '" + toolStripTextBox3.Text + "';";
+                con.Open();
+                NpgsqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Read();
+                rdr.Close();
+                cmd.CommandText = $"select * from kursach." + table + ";";
+                rdr = cmd.ExecuteReader();
+                ArrayList records = new ArrayList();
+                if (rdr.HasRows)
+                    foreach (DbDataRecord rec in rdr)
+                        //dataSet1.Tables.(rec);
+                        records.Add(rec);
+                con.Close();
+                dataGridView1.DataSource = records;
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Ошибка удаления";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView1.Select();
+        }
+
+        private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hit = dataGridView1.HitTest(e.X, e.Y);
+                if (hit.RowIndex >= 0)
+                {
+                    dataGridView1.ClearSelection();
+                    DataGridViewCell cell = dataGridView1.Rows[hit.RowIndex].Cells[hit.ColumnIndex];
+                    cell.Selected = true;
+                    contextMenuStrip1.Show(dataGridView1, e.Location);
+                }
+            }
+        }
     }
 }
