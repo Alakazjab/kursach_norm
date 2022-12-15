@@ -116,6 +116,7 @@ namespace kursach
             this.Controls.Add(this.textBox1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
