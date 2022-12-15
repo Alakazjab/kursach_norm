@@ -17,7 +17,7 @@ namespace kursach
 {
     public partial class Login : Form
     {
-        
+        AdminForm childForm;
         MainForm childForm1;
         public Login()
         {
@@ -39,13 +39,28 @@ namespace kursach
                     rdr.Read();
                     if (rdr.HasRows && BCrypt.Net.BCrypt.Verify(textBox2.Text, rdr.GetString(1)))
                     {
-                        childForm1 = new MainForm(textBox1.Text);
-                        childForm1.Show();
-                        this.Visible = false;
+                        rdr.Close();
+                        cmd.CommandText = $"select role from kursach.users where email = '" + textBox1.Text + "';";
+                        rdr = cmd.ExecuteReader();
+                        rdr.Read();
+                        if (rdr.GetString(0) == "admin")
+                        {
+                            this.Visible = false;
+                            childForm = new AdminForm(textBox1.Text);
+                            childForm.Show();
+                            con.Close();
+                        }
+                        else
+                        {
+                            childForm1 = new MainForm(textBox1.Text);
+                            childForm1.Show();
+                            this.Visible = false;
+                            con.Close();
+                        }
                     }
                     else
                     {
-                        string message = passwordHash;
+                        string message = "Логин или пароль неверны";
                         string caption = "Ошибка входа";
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         DialogResult result;

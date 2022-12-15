@@ -80,5 +80,10 @@ namespace kursach
                 result = MessageBox.Show(message, caption, buttons);
             }
         }
+
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

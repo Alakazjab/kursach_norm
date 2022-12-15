@@ -62,6 +62,7 @@ namespace kursach
             this.Controls.Add(this.dataGridView1);
             this.Name = "MainForm";
             this.Text = "информация";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

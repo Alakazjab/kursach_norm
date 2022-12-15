@@ -18,7 +18,8 @@ namespace kursach
     {
         public string a;
         public string table;
-        public string update;
+        public string update_header;
+        public string update_id;
 
         public AdminForm(string data)
         {
@@ -45,31 +46,6 @@ namespace kursach
             dataGridView1.DataSource = records;
             
         }
-
-        private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            /*string message = Convert.ToString(dataGridView1.ColumnHeaderCellChanged).Trim(new char[] { '{', '}' });
-            string caption = "Ошибка входа";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons);
-            NpgsqlConnection con = new NpgsqlConnection();
-            con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
-            NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = $"select * from kursach.student order by "+"id" +";";
-            con.Open();
-            NpgsqlDataReader rdr = cmd.ExecuteReader();
-            ArrayList records = new ArrayList();
-            if (rdr.HasRows)
-                foreach (DbDataRecord rec in rdr)
-                    //dataSet1.Tables.(rec);
-                    records.Add(rec);
-            con.Close();
-            dataGridView1.DataSource = records;*/
-        }
-
         private void сортировкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
@@ -78,7 +54,7 @@ namespace kursach
                 con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"select * from kursach."+table+" order by " + toolStripTextBox1.Text + ";";
+                cmd.CommandText = $"select * from kursach." + table + " order by " + toolStripTextBox1.Text + ";";
                 con.Open();
                 NpgsqlDataReader rdr = cmd.ExecuteReader();
                 ArrayList records = new ArrayList();
@@ -109,7 +85,6 @@ namespace kursach
         {
             try
             {
-                
                 NpgsqlConnection con = new NpgsqlConnection();
                 con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                 NpgsqlCommand cmd = new NpgsqlCommand();
@@ -124,7 +99,6 @@ namespace kursach
                 ArrayList records = new ArrayList();
                 if (rdr.HasRows)
                     foreach (DbDataRecord rec in rdr)
-                        //dataSet1.Tables.(rec);
                         records.Add(rec);
                 con.Close();
                 dataGridView1.DataSource = records;
@@ -495,7 +469,7 @@ namespace kursach
                 con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"update  kursach." + table + " set " + toolStripTextBox4 + ".\"" + toolStripTextBox2.Text + "\" = '" + toolStripTextBox3.Text + "';";
+                cmd.CommandText = $"update  kursach." + table + " set " + update_header + " = '" + toolStripTextBox4.Text + "' where id = "+update_id+";";
                 con.Open();
                 NpgsqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Read();
@@ -537,8 +511,14 @@ namespace kursach
                     DataGridViewCell cell = dataGridView1.Rows[hit.RowIndex].Cells[hit.ColumnIndex];
                     cell.Selected = true;
                     contextMenuStrip1.Show(dataGridView1, e.Location);
+                    update_header = Convert.ToString(dataGridView1.Columns[hit.ColumnIndex].HeaderCell.Value);
+                    update_id = Convert.ToString(dataGridView1.Rows[hit.RowIndex].Cells[0].Value);
                 }
             }
+        } 
+        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
