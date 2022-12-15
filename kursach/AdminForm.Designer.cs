@@ -54,6 +54,7 @@ namespace kursach
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.применитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поУбываниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -85,7 +86,8 @@ namespace kursach
             // 
             this.сортировкаToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1,
-            this.отсортироватьToolStripMenuItem});
+            this.отсортироватьToolStripMenuItem,
+            this.поУбываниюToolStripMenuItem});
             this.сортировкаToolStripMenuItem1.Name = "сортировкаToolStripMenuItem1";
             this.сортировкаToolStripMenuItem1.Size = new System.Drawing.Size(85, 20);
             this.сортировкаToolStripMenuItem1.Text = "Сортировка";
@@ -99,8 +101,8 @@ namespace kursach
             // отсортироватьToolStripMenuItem
             // 
             this.отсортироватьToolStripMenuItem.Name = "отсортироватьToolStripMenuItem";
-            this.отсортироватьToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.отсортироватьToolStripMenuItem.Text = "Отсортировать";
+            this.отсортироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отсортироватьToolStripMenuItem.Text = "По возростанию";
             this.отсортироватьToolStripMenuItem.Click += new System.EventHandler(this.сортировкаToolStripMenuItem1_Click);
             // 
             // таблицаToolStripMenuItem
@@ -251,6 +253,13 @@ namespace kursach
             this.применитьToolStripMenuItem.Text = "Применить";
             this.применитьToolStripMenuItem.Click += new System.EventHandler(this.применитьToolStripMenuItem_Click);
             // 
+            // поУбываниюToolStripMenuItem
+            // 
+            this.поУбываниюToolStripMenuItem.Name = "поУбываниюToolStripMenuItem";
+            this.поУбываниюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поУбываниюToolStripMenuItem.Text = "По убыванию";
+            this.поУбываниюToolStripMenuItem.Click += new System.EventHandler(this.поУбываниюToolStripMenuItem_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,5 +308,6 @@ namespace kursach
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
         private System.Windows.Forms.ToolStripMenuItem применитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поУбываниюToolStripMenuItem;
     }
 }

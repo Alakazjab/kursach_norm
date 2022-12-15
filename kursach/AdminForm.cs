@@ -520,5 +520,41 @@ namespace kursach
         {
             Application.Exit();
         }
+
+        private void поУбываниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NpgsqlConnection con = new NpgsqlConnection();
+                con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"select * from kursach." + table + " order by " + toolStripTextBox1.Text + " desc;";
+                con.Open();
+                NpgsqlDataReader rdr = cmd.ExecuteReader();
+                ArrayList records = new ArrayList();
+                if (rdr.HasRows)
+                    foreach (DbDataRecord rec in rdr)
+                        //dataSet1.Tables.(rec);
+                        records.Add(rec);
+                con.Close();
+                dataGridView1.DataSource = records;
+                toolStripTextBox1.Clear();
+            }
+            catch
+            {
+                string message = "Неверно введено название колонки";
+                string caption = "Ошибка сортировки";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+            finally
+            {
+                toolStripTextBox1.Clear();
+            }
+        }
     }
+    
 }
