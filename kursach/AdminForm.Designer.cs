@@ -56,6 +56,14 @@ namespace kursach
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.применитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.новоеЗначениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.колонкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.значениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -127,7 +135,8 @@ namespace kursach
             this.студентыToolStripMenuItem,
             this.учебнаяНагрузкаToolStripMenuItem,
             this.учебныйПланToolStripMenuItem,
-            this.защитаКатегорииToolStripMenuItem});
+            this.защитаКатегорииToolStripMenuItem,
+            this.пользователиToolStripMenuItem});
             this.таблицаToolStripMenuItem.Name = "таблицаToolStripMenuItem";
             this.таблицаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.таблицаToolStripMenuItem.Text = "Таблица";
@@ -212,8 +221,12 @@ namespace kursach
             // удалениеToolStripMenuItem
             // 
             this.удалениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.колонкаToolStripMenuItem,
             this.toolStripTextBox2,
+            this.toolStripSeparator2,
+            this.значениеToolStripMenuItem,
             this.toolStripTextBox3,
+            this.toolStripSeparator3,
             this.удалитьToolStripMenuItem});
             this.удалениеToolStripMenuItem.Name = "удалениеToolStripMenuItem";
             this.удалениеToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
@@ -222,12 +235,14 @@ namespace kursach
             // toolStripTextBox2
             // 
             this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox2.ToolTipText = "Колонка";
             // 
             // toolStripTextBox3
             // 
+            this.toolStripTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox3.ToolTipText = "Значение";
@@ -235,7 +250,7 @@ namespace kursach
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -249,22 +264,76 @@ namespace kursach
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новоеЗначениеToolStripMenuItem,
             this.toolStripTextBox4,
-            this.применитьToolStripMenuItem});
+            this.toolStripSeparator1,
+            this.применитьToolStripMenuItem,
+            this.удалитьСтрокуToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 51);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 101);
             // 
             // toolStripTextBox4
             // 
+            this.toolStripTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripTextBox4.Name = "toolStripTextBox4";
             this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
             // 
             // применитьToolStripMenuItem
             // 
             this.применитьToolStripMenuItem.Name = "применитьToolStripMenuItem";
-            this.применитьToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.применитьToolStripMenuItem.Text = "Применить";
+            this.применитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.применитьToolStripMenuItem.Text = "Обновить";
             this.применитьToolStripMenuItem.Click += new System.EventHandler(this.применитьToolStripMenuItem_Click);
+            // 
+            // удалитьСтрокуToolStripMenuItem
+            // 
+            this.удалитьСтрокуToolStripMenuItem.Name = "удалитьСтрокуToolStripMenuItem";
+            this.удалитьСтрокуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьСтрокуToolStripMenuItem.Text = "Удалить строку";
+            this.удалитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.удалитьСтрокуToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
+            // 
+            // новоеЗначениеToolStripMenuItem
+            // 
+            this.новоеЗначениеToolStripMenuItem.Enabled = false;
+            this.новоеЗначениеToolStripMenuItem.Name = "новоеЗначениеToolStripMenuItem";
+            this.новоеЗначениеToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.новоеЗначениеToolStripMenuItem.Text = "Новое значение";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // колонкаToolStripMenuItem
+            // 
+            this.колонкаToolStripMenuItem.Enabled = false;
+            this.колонкаToolStripMenuItem.Name = "колонкаToolStripMenuItem";
+            this.колонкаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.колонкаToolStripMenuItem.Text = "Колонка";
+            // 
+            // значениеToolStripMenuItem
+            // 
+            this.значениеToolStripMenuItem.Enabled = false;
+            this.значениеToolStripMenuItem.Name = "значениеToolStripMenuItem";
+            this.значениеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.значениеToolStripMenuItem.Text = "Значение";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
@@ -316,5 +385,13 @@ namespace kursach
         private System.Windows.Forms.ToolStripMenuItem применитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поУбываниюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьСтрокуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьСтрокуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem новоеЗначениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem колонкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem значениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

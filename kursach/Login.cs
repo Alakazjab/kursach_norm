@@ -89,7 +89,7 @@ namespace kursach
                 }
                 else
                 {
-                    string message = "Логин или пароль неверны";
+                    string message = "Почта или пароль неверны";
                     string caption = "Ошибка входа";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     DialogResult result;

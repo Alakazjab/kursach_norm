@@ -25,7 +25,7 @@ namespace kursach
         {
             InitializeComponent();
             a = data;
-            table = "student";
+            table = "student_1";
         }
         private void AdminForm_Load(object sender, EventArgs e)
         {
@@ -84,35 +84,35 @@ namespace kursach
         }
         private void дипломToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("diplom");
+            select_table("diplom_1");
         }
         private void факультетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("facultet");
+            select_table("facultet_1");
         }
         private void группаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("gruppa");
+            select_table("gruppa_1");
         }
         private void кафедраToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("kafedra");
+            select_table("kafedra_1");
         }
         private void количествоЧасовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("kolichestvo_chasov");
+            select_table("kolichestvo_chasov_1");
         }
         private void оценкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("ocenki");
+            select_table("ocenki_1");
         }
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("sotrudnik");
+            select_table("sotrudnik_1");
         }
         private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("student");
+            select_table("student_1");
         }
         private void учебнаяНагрузкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -120,11 +120,15 @@ namespace kursach
         }
         private void учебныйПланToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("ychebniy_plan");
+            select_table("ychebniy_plan_1");
         }
         private void защитаКатегорииToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("zashita_kategorii");
+            select_table("zashita_kategorii_1");
+        }
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            select_table("users_1");
         }
         private void применитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -301,70 +305,70 @@ namespace kursach
         {
             switch (table)
             {
-                case "diplom":
+                case "diplom_1":
                     diplom_insert diplom_Insert = new diplom_insert();
                     diplom_Insert.ShowDialog();
-                    select_table("diplom");
+                    select_table("diplom_1");
                     break;
 
-                case "facultet":
+                case "facultet_1":
                     facultet_ins facultet_Ins = new facultet_ins();
                     facultet_Ins.ShowDialog();
-                    select_table("facultet");
+                    select_table("facultet_1");
                     break;
 
-                case "gruppa":
+                case "gruppa_1":
                     gruppa_insert gruppa_Insert = new gruppa_insert();
                     gruppa_Insert.ShowDialog();
-                    select_table("gruppa");
+                    select_table("gruppa_1");
                     break;
 
-                case "kafedra":
+                case "kafedra_1":
                     kafedra_insert kafedra_Insert = new kafedra_insert();
                     kafedra_Insert.ShowDialog();
-                    select_table("kafedra");
+                    select_table("kafedra_1");
                     break;
 
-                case "kolichestvo_chasov":
+                case "kolichestvo_chasov_1":
                     kolichestvo_chasov_insert kolichestvo_Chasov_Insert = new kolichestvo_chasov_insert();
                     kolichestvo_Chasov_Insert.ShowDialog();
-                    select_table("kolichestvo_chasov");
+                    select_table("kolichestvo_chasov_1");
                     break;
 
-                case "ocenki":
+                case "ocenki_1":
                     ocenki_insert ocenki_Insert = new ocenki_insert();
                     ocenki_Insert.ShowDialog();
-                    select_table("ocenki");
+                    select_table("ocenki_1");
                     break;
 
-                case "sotrudnik":
+                case "sotrudnik_1":
                     sotrudnik_insert sotrudnik_Insert = new sotrudnik_insert();
                     sotrudnik_Insert.ShowDialog();
-                    select_table("sotrudnik");
+                    select_table("sotrudnik_1");
                     break;
 
-                case "student":
+                case "student_1":
                     student_insert student_Insert = new student_insert();
                     student_Insert.ShowDialog();
-                    select_table("student");
+                    select_table("student_1");
                     break;
 
-                case "ychebnaya_nagruzka":
+                case "ychebnaya_nagruzka_1":
                     ychebnaya_nagruzka_insert ychebnaya_Nagruzka_Insert = new ychebnaya_nagruzka_insert();
                     ychebnaya_Nagruzka_Insert.ShowDialog();
-                    select_table("ychebnaya_nagruzka");
+                    select_table("ychebnaya_nagruzka_1");
                     break;
 
-                case "ychebniy_plan":
+                case "ychebniy_plan_1":
                     ychebniy_plan_insert ychebniy_Plan_Insert = new ychebniy_plan_insert();
                     ychebniy_Plan_Insert.ShowDialog();
-                    select_table("ychebniy_plan");
+                    select_table("ychebniy_plan_1");
                     break;
 
-                case "zashita_kategorii":
+                case "zashita_kategorii_1":
                     zashita_kategorii_insert zashita_Kategorii_Insert = new zashita_kategorii_insert();
                     zashita_Kategorii_Insert.ShowDialog();
-                    select_table("zashita_kategorii");
+                    select_table("zashita_kategorii_1");
                     break;
 
                 default:
@@ -375,6 +379,40 @@ namespace kursach
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void удалитьСтрокуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                NpgsqlConnection con = new NpgsqlConnection();
+                con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = $"delete from kursach." + table + " where " + table + ".\"" + Convert.ToString(dataGridView1.Columns[0].HeaderCell.Value) + "\" = '" + update_id + "';";
+                con.Open();
+                NpgsqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Read();
+                rdr.Close();
+                cmd.CommandText = $"select * from kursach." + table + ";";
+                rdr = cmd.ExecuteReader();
+                ArrayList records = new ArrayList();
+                if (rdr.HasRows)
+                    foreach (DbDataRecord rec in rdr)
+                        records.Add(rec);
+                con.Close();
+                dataGridView1.DataSource = records;
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Ошибка удаления";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
         }
     }
     
