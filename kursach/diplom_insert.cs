@@ -56,7 +56,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.diplom_insert('{textBox1.Text}','{dateTimePicker1.Value}',{comboBox1.SelectedIndex + 1},{textBox4.Text},{comboBox2.SelectedIndex + 1});");
+                Class1.insert($"call kursach.diplom_insert('{textBox1.Text}'::character varying,'{dateTimePicker1.Text}'::date,{comboBox1.SelectedIndex + 1},{textBox4.Text},{comboBox2.SelectedIndex + 1});");
                 this.Close();
             }
             catch (Exception ex)

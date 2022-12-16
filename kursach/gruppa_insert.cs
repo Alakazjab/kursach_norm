@@ -46,7 +46,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.gruppa_insert('{textBox1.Text}',{comboBox1.SelectedIndex + 1},'{textBox4.Text}',{textBox2.Text});");
+                Class1.insert($"call kursach.gruppa_insert('{textBox1.Text}'::character varying,{comboBox1.SelectedIndex + 1},'{textBox4.Text}'::character varying,{textBox2.Text});");
                 this.Close();
             }
             catch (Exception ex)

@@ -22,7 +22,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.zashita_kategorii_insert('{dateTimePicker1.Value}',{comboBox1.SelectedIndex + 1},'{textBox4.Text}','{textBox1.Text}');");
+                Class1.insert($"call kursach.zashita_kategorii_insert('{dateTimePicker1.Text}'::date,{comboBox1.SelectedIndex + 1},'{textBox4.Text}'::character varying,'{textBox1.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)

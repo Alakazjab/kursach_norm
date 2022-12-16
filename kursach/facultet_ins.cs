@@ -31,7 +31,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.facultet_insert('{textBox1.Text}','{textBox4.Text}');");
+                Class1.insert($"call kursach.facultet_insert('{textBox1.Text}'::character varying,'{textBox4.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)

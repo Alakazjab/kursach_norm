@@ -65,13 +65,13 @@ namespace kursach
             try
             {
                 Class1.insert(
-                    $"call kursach.diplom_insert(" +
+                    $"call kursach.ocenki_insert(" +
                     $"{comboBox1.SelectedIndex + 1}," +
-                    $"'{dateTimePicker1.Value}'," +
+                    $"'{dateTimePicker1.Text}'::date," +
                     $"{textBox1.Text}," +
                     $"{comboBox2.SelectedIndex + 1}," +
                     $"{comboBox3.SelectedIndex + 1}," +
-                    $"'{textBox2.Text}');");
+                    $"'{textBox2.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)

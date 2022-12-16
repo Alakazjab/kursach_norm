@@ -218,9 +218,9 @@ namespace kursach
                 con.Close();
                 dataGridView1.DataSource = records;
             }
-            catch
+            catch (Exception ex)
             {
-                string message = "Ошибка выборки";
+                string message = ex.Message;
                 string caption = "Ошибка выборки";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
@@ -370,6 +370,11 @@ namespace kursach
                 default:
                 break;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     

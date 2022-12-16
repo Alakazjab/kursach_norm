@@ -29,7 +29,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.diplom_insert({comboBox1.SelectedIndex + 1},{comboBox2.SelectedIndex + 1},{comboBox3.SelectedIndex + 1},{comboBox4.SelectedIndex + 1},{comboBox5.SelectedIndex + 1});");
+                Class1.insert($"call kursach.ychebnaya_nagruzka_insert({comboBox1.SelectedIndex + 1},{comboBox2.SelectedIndex + 1},{comboBox3.SelectedIndex + 1},{comboBox4.SelectedIndex + 1},{comboBox5.SelectedIndex + 1});");
                 this.Close();
             }
             catch (Exception ex)

@@ -26,7 +26,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.ychebniy_plan_insert('{textBox1.Text}',{textBox2.Text},{textBox3.Text},'{textBox4.Text}','{textBox5.Text}');");
+                Class1.insert($"call kursach.ychebniy_plan_insert('{textBox1.Text}'::character varying,{textBox2.Text},{textBox3.Text},'{textBox4.Text}'::character varying,'{textBox5.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)

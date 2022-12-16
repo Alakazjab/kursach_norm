@@ -35,6 +35,7 @@ namespace kursach
             this.сортировкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.отсортироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поУбываниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.таблицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дипломToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.факультетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,11 +52,10 @@ namespace kursach
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.применитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поУбываниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -68,6 +68,7 @@ namespace kursach
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(798, 411);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseDoubleClick);
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             // 
@@ -96,16 +97,22 @@ namespace kursach
             // 
             // toolStripTextBox1
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // отсортироватьToolStripMenuItem
             // 
             this.отсортироватьToolStripMenuItem.Name = "отсортироватьToolStripMenuItem";
-            this.отсортироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отсортироватьToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.отсортироватьToolStripMenuItem.Text = "По возростанию";
             this.отсортироватьToolStripMenuItem.Click += new System.EventHandler(this.сортировкаToolStripMenuItem1_Click);
+            // 
+            // поУбываниюToolStripMenuItem
+            // 
+            this.поУбываниюToolStripMenuItem.Name = "поУбываниюToolStripMenuItem";
+            this.поУбываниюToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.поУбываниюToolStripMenuItem.Text = "По убыванию";
+            this.поУбываниюToolStripMenuItem.Click += new System.EventHandler(this.поУбываниюToolStripMenuItem_Click);
             // 
             // таблицаToolStripMenuItem
             // 
@@ -215,14 +222,12 @@ namespace kursach
             // toolStripTextBox2
             // 
             this.toolStripTextBox2.AutoSize = false;
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox2.ToolTipText = "Колонка";
             // 
             // toolStripTextBox3
             // 
-            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox3.ToolTipText = "Значение";
@@ -234,6 +239,13 @@ namespace kursach
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
+            // добавитьСтрокуToolStripMenuItem
+            // 
+            this.добавитьСтрокуToolStripMenuItem.Name = "добавитьСтрокуToolStripMenuItem";
+            this.добавитьСтрокуToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.добавитьСтрокуToolStripMenuItem.Text = "Добавить строку";
+            this.добавитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.добавитьСтрокуToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -244,7 +256,6 @@ namespace kursach
             // 
             // toolStripTextBox4
             // 
-            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
             this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
             // 
@@ -254,20 +265,6 @@ namespace kursach
             this.применитьToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.применитьToolStripMenuItem.Text = "Применить";
             this.применитьToolStripMenuItem.Click += new System.EventHandler(this.применитьToolStripMenuItem_Click);
-            // 
-            // поУбываниюToolStripMenuItem
-            // 
-            this.поУбываниюToolStripMenuItem.Name = "поУбываниюToolStripMenuItem";
-            this.поУбываниюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.поУбываниюToolStripMenuItem.Text = "По убыванию";
-            this.поУбываниюToolStripMenuItem.Click += new System.EventHandler(this.поУбываниюToolStripMenuItem_Click);
-            // 
-            // добавитьСтрокуToolStripMenuItem
-            // 
-            this.добавитьСтрокуToolStripMenuItem.Name = "добавитьСтрокуToolStripMenuItem";
-            this.добавитьСтрокуToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-            this.добавитьСтрокуToolStripMenuItem.Text = "Добавить строку";
-            this.добавитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.добавитьСтрокуToolStripMenuItem_Click);
             // 
             // AdminForm
             // 

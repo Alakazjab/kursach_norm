@@ -39,7 +39,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.kafedra_insert({comboBox1.SelectedIndex + 1},'{textBox4.Text}');");
+                Class1.insert($"call kursach.kafedra_insert({comboBox1.SelectedIndex + 1},'{textBox4.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)

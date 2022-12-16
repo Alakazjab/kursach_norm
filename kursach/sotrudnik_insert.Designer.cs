@@ -55,15 +55,13 @@ namespace kursach
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(128, 328);
+            this.button2.Location = new System.Drawing.Point(128, 302);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 23);
             this.button2.TabIndex = 36;
@@ -73,7 +71,7 @@ namespace kursach
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 328);
+            this.button1.Location = new System.Drawing.Point(16, 302);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 23);
             this.button1.TabIndex = 35;
@@ -298,29 +296,11 @@ namespace kursach
             this.label10.TabIndex = 55;
             this.label10.Text = "Категория";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(128, 302);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(187, 20);
-            this.textBox6.TabIndex = 58;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 305);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
-            this.label11.TabIndex = 57;
-            this.label11.Text = "E-mail";
-            // 
             // sotrudnik_insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 379);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(337, 335);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox2);
@@ -384,7 +364,5 @@ namespace kursach
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label11;
     }
 }

@@ -25,18 +25,17 @@ namespace kursach
             try
             {
                 Class1.insert(
-                    $"call kursach.diplom_insert(" +
-                    $"'{textBox1.Text}'," +
-                    $"'{textBox2.Text}'," +
-                    $"'{textBox3.Text}'," +
-                    $"'{dateTimePicker1.Value}'," +
-                    $"'{(radioButton1.Checked == true ? radioButton1.Text : radioButton2.Text)}'" +
-                    $"'{(radioButton4.Checked == true ? '0' : '1')}'" +
+                    $"call kursach.sotrudnik_insert(" +
+                    $"'{textBox1.Text}'::character varying," +
+                    $"'{textBox2.Text}'::character varying," +
+                    $"'{textBox3.Text}'::character varying," +
+                    $"'{dateTimePicker1.Text}'::date," +
+                    $"'{(radioButton1.Checked == true ? radioButton1.Text : radioButton2.Text)}'::character varying," +
+                    $"{(radioButton4.Checked == true ? 0 : 1)}::boolean," +
                     $"{textBox4.Text}," +
                     $"{comboBox1.SelectedIndex + 1}," +
                     $"{comboBox2.SelectedIndex + 1}," +
-                    $"'{textBox5.Text}'," +
-                    $"'{textBox6.Text}');");
+                    $"'{textBox5.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)
