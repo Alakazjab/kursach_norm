@@ -155,6 +155,7 @@ namespace kursach
             this.button2.TabIndex = 34;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -164,6 +165,7 @@ namespace kursach
             this.button1.TabIndex = 33;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ocenki_insert
             // 
@@ -187,6 +189,7 @@ namespace kursach
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ocenki_insert";
             this.Text = "ocenki_insert";
+            this.Load += new System.EventHandler(this.ocenki_insert_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
