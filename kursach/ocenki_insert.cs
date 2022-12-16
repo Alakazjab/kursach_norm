@@ -40,7 +40,7 @@ namespace kursach
                     //dataSet1.Tables.(rec);
                     comboBox1.Items.Add(rec.GetString(0));
             rdr.Close();
-            cmd.CommandText = $"select * from kursach.sotrudnic_fio;";
+            cmd.CommandText = $"select * from kursach.sortudnic_fio;";
             rdr = cmd.ExecuteReader();
             records.Clear();
             if (rdr.HasRows)

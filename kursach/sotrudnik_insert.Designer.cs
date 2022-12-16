@@ -53,8 +53,8 @@ namespace kursach
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -280,13 +280,6 @@ namespace kursach
             this.label9.TabIndex = 53;
             this.label9.Text = "Факультет";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(128, 276);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(187, 20);
-            this.textBox5.TabIndex = 56;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -296,12 +289,27 @@ namespace kursach
             this.label10.TabIndex = 55;
             this.label10.Text = "Категория";
             // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Ассистент",
+            "Преподаватель",
+            "Старший преподаватель",
+            "Доцент",
+            "Профессор"});
+            this.comboBox3.Location = new System.Drawing.Point(128, 276);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(187, 21);
+            this.comboBox3.TabIndex = 57;
+            // 
             // sotrudnik_insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 335);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label9);
@@ -362,7 +370,7 @@ namespace kursach
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

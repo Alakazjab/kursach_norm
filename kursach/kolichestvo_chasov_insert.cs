@@ -29,7 +29,7 @@ namespace kursach
         {
             try
             {
-                Class1.insert($"call kursach.kolichestvo_chasov_insert({comboBox1.SelectedIndex + 1},'{textBox4.Text}'::character varying,{textBox1.Text});");
+                Class1.insert($"call kursach.kolichestvo_chasov_insert({comboBox1.SelectedIndex + 1},'{comboBox2.Text}'::character varying,{textBox1.Text});");
                 this.Close();
             }
             catch (Exception ex)

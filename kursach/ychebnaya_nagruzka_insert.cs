@@ -66,7 +66,7 @@ namespace kursach
                     //dataSet1.Tables.(rec);
                     comboBox2.Items.Add(rec.GetString(0));
             rdr.Close();
-            cmd.CommandText = $"select shifr from kursach.ychplan_nazv;";
+            cmd.CommandText = $"select * from kursach.ychplan_nazv;";
             rdr = cmd.ExecuteReader();
             records.Clear();
             if (rdr.HasRows)
@@ -74,7 +74,7 @@ namespace kursach
                     //dataSet1.Tables.(rec);
                     comboBox3.Items.Add(rec.GetString(0));
             rdr.Close();
-            cmd.CommandText = $"select shifr from kursach.vid_zanyatiya;";
+            cmd.CommandText = $"select * from kursach.vid_zanyatiya;";
             rdr = cmd.ExecuteReader();
             records.Clear();
             if (rdr.HasRows)
@@ -82,7 +82,7 @@ namespace kursach
                     //dataSet1.Tables.(rec);
                     comboBox4.Items.Add(rec.GetString(0));
             rdr.Close();
-            cmd.CommandText = $"select shifr from kursach.sotrudnic_fio;";
+            cmd.CommandText = $"select * from kursach.sortudnic_fio;";
             rdr = cmd.ExecuteReader();
             records.Clear();
             if (rdr.HasRows)

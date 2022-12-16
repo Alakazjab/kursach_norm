@@ -116,7 +116,7 @@ namespace kursach
         }
         private void учебнаяНагрузкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            select_table("ychebnaya_nagruzka");
+            select_table("ychebnaya_nagruzka_1");
         }
         private void учебныйПланToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -139,7 +139,7 @@ namespace kursach
                 con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"update  kursach." + table + " set " + update_header + " = '" + toolStripTextBox4.Text + "' where id = "+update_id+";";
+                cmd.CommandText = $"update  kursach." + table + " set " + update_header + " = '" + toolStripTextBox4.Text + "' where "+ Convert.ToString(dataGridView1.Columns[0].HeaderCell.Value) + " = "+update_id+";";
                 con.Open();
                 NpgsqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Read();
@@ -192,7 +192,7 @@ namespace kursach
 
         private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var hit = dataGridView1.HitTest(e.X, e.Y);
+            /*var hit = dataGridView1.HitTest(e.X, e.Y);
             dataGridView1.ClearSelection();
             string message = hit.ColumnX.ToString();
             string caption = "Ошибка удаления";
@@ -200,7 +200,7 @@ namespace kursach
             DialogResult result;
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons);
-            //sort_asc(Convert.ToString(dataGridView1.Columns[hit.ColumnIndex].HeaderCell.Value));
+            //sort_asc(Convert.ToString(dataGridView1.Columns[hit.ColumnIndex].HeaderCell.Value));*/
         }
         public void select_table(string tbl)
         {
@@ -240,7 +240,7 @@ namespace kursach
                 con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"select * from kursach." + table + " order by " + header + ";";
+                cmd.CommandText = $"select * from kursach." + table + " order by \"" + header + "\";";
                 con.Open();
                 NpgsqlDataReader rdr = cmd.ExecuteReader();
                 ArrayList records = new ArrayList();
@@ -274,7 +274,7 @@ namespace kursach
                 con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = $"select * from kursach." + table + " order by " + header + "desc;";
+                cmd.CommandText = $"select * from kursach." + table + " order by \"" + header + "\" desc;";
                 con.Open();
                 NpgsqlDataReader rdr = cmd.ExecuteReader();
                 ArrayList records = new ArrayList();

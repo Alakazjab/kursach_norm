@@ -35,7 +35,7 @@ namespace kursach
                     $"{textBox4.Text}," +
                     $"{comboBox1.SelectedIndex + 1}," +
                     $"{comboBox2.SelectedIndex + 1}," +
-                    $"'{textBox5.Text}'::character varying);");
+                    $"'{comboBox3.Text}'::character varying);");
                 this.Close();
             }
             catch (Exception ex)
