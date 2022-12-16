@@ -71,6 +71,7 @@ namespace kursach
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Location = new System.Drawing.Point(134, 140);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(124, 13);
             this.textBox2.TabIndex = 8;
             // 
@@ -96,6 +97,7 @@ namespace kursach
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Location = new System.Drawing.Point(134, 166);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(124, 13);
             this.textBox3.TabIndex = 12;
             // 
