@@ -48,22 +48,24 @@ namespace kursach
             this.учебнаяНагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.учебныйПланToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.защитаКатегорииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.колонкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.значениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.новоеЗначениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.применитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.новоеЗначениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.колонкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.значениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.колонкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -96,7 +98,9 @@ namespace kursach
             // сортировкаToolStripMenuItem1
             // 
             this.сортировкаToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.колонкаToolStripMenuItem1,
             this.toolStripTextBox1,
+            this.toolStripSeparator4,
             this.отсортироватьToolStripMenuItem,
             this.поУбываниюToolStripMenuItem});
             this.сортировкаToolStripMenuItem1.Name = "сортировкаToolStripMenuItem1";
@@ -105,6 +109,7 @@ namespace kursach
             // 
             // toolStripTextBox1
             // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
@@ -218,6 +223,13 @@ namespace kursach
             this.защитаКатегорииToolStripMenuItem.Text = "Защита категории";
             this.защитаКатегорииToolStripMenuItem.Click += new System.EventHandler(this.защитаКатегорииToolStripMenuItem_Click);
             // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            // 
             // удалениеToolStripMenuItem
             // 
             this.удалениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -232,25 +244,51 @@ namespace kursach
             this.удалениеToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.удалениеToolStripMenuItem.Text = "Удаление";
             // 
+            // колонкаToolStripMenuItem
+            // 
+            this.колонкаToolStripMenuItem.Enabled = false;
+            this.колонкаToolStripMenuItem.Name = "колонкаToolStripMenuItem";
+            this.колонкаToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.колонкаToolStripMenuItem.Text = "Колонка";
+            // 
             // toolStripTextBox2
             // 
             this.toolStripTextBox2.AutoSize = false;
             this.toolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox2.ToolTipText = "Колонка";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(157, 6);
+            // 
+            // значениеToolStripMenuItem
+            // 
+            this.значениеToolStripMenuItem.Enabled = false;
+            this.значениеToolStripMenuItem.Name = "значениеToolStripMenuItem";
+            this.значениеToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.значениеToolStripMenuItem.Text = "Значение";
+            // 
             // toolStripTextBox3
             // 
             this.toolStripTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox3.ToolTipText = "Значение";
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(157, 6);
+            // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -272,31 +310,6 @@ namespace kursach
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(164, 101);
             // 
-            // toolStripTextBox4
-            // 
-            this.toolStripTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
-            // 
-            // применитьToolStripMenuItem
-            // 
-            this.применитьToolStripMenuItem.Name = "применитьToolStripMenuItem";
-            this.применитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.применитьToolStripMenuItem.Text = "Обновить";
-            this.применитьToolStripMenuItem.Click += new System.EventHandler(this.применитьToolStripMenuItem_Click);
-            // 
-            // удалитьСтрокуToolStripMenuItem
-            // 
-            this.удалитьСтрокуToolStripMenuItem.Name = "удалитьСтрокуToolStripMenuItem";
-            this.удалитьСтрокуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.удалитьСтрокуToolStripMenuItem.Text = "Удалить строку";
-            this.удалитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.удалитьСтрокуToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
-            // 
             // новоеЗначениеToolStripMenuItem
             // 
             this.новоеЗначениеToolStripMenuItem.Enabled = false;
@@ -304,36 +317,43 @@ namespace kursach
             this.новоеЗначениеToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.новоеЗначениеToolStripMenuItem.Text = "Новое значение";
             // 
-            // toolStripSeparator2
+            // toolStripTextBox4
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
             // 
-            // колонкаToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.колонкаToolStripMenuItem.Enabled = false;
-            this.колонкаToolStripMenuItem.Name = "колонкаToolStripMenuItem";
-            this.колонкаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.колонкаToolStripMenuItem.Text = "Колонка";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(160, 6);
             // 
-            // значениеToolStripMenuItem
+            // применитьToolStripMenuItem
             // 
-            this.значениеToolStripMenuItem.Enabled = false;
-            this.значениеToolStripMenuItem.Name = "значениеToolStripMenuItem";
-            this.значениеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.значениеToolStripMenuItem.Text = "Значение";
+            this.применитьToolStripMenuItem.Name = "применитьToolStripMenuItem";
+            this.применитьToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.применитьToolStripMenuItem.Text = "Обновить";
+            this.применитьToolStripMenuItem.Click += new System.EventHandler(this.применитьToolStripMenuItem_Click);
             // 
-            // toolStripSeparator3
+            // удалитьСтрокуToolStripMenuItem
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.удалитьСтрокуToolStripMenuItem.Name = "удалитьСтрокуToolStripMenuItem";
+            this.удалитьСтрокуToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.удалитьСтрокуToolStripMenuItem.Text = "Удалить строку";
+            this.удалитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.удалитьСтрокуToolStripMenuItem_Click);
             // 
-            // пользователиToolStripMenuItem
+            // колонкаToolStripMenuItem1
             // 
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
-            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            this.колонкаToolStripMenuItem1.Enabled = false;
+            this.колонкаToolStripMenuItem1.Name = "колонкаToolStripMenuItem1";
+            this.колонкаToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.колонкаToolStripMenuItem1.Text = "Колонка";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // AdminForm
             // 
@@ -393,5 +413,7 @@ namespace kursach
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem значениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem колонкаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
