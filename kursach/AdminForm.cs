@@ -70,6 +70,7 @@ namespace kursach
                     foreach (DbDataRecord rec in rdr)
                         records.Add(rec);
                 con.Close();
+                
                 dataGridView1.DataSource = records;
             }
             catch (Exception ex)

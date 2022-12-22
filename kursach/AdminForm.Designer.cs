@@ -33,7 +33,9 @@ namespace kursach
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.сортировкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.колонкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.отсортироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поУбываниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.таблицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,8 +66,53 @@ namespace kursach
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.применитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.колонкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.item1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.item2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.группаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_st_Gruppa = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.курсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextBox_st_kurs = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.полToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_st_pol = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.годРожденияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextBox_st_godr = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.возрастToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextBox_st_vozrast = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.детиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_st_kids = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.стипендияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_st_stipendia = new System.Windows.Forms.ToolStripComboBox();
+            this.TextBox_st_stipendia = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кафедраToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_pr_kafedra = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.факультетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_pr_facultet = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.категорияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.comboBox_pr_category = new System.Windows.Forms.ToolStripComboBox();
+            this.полToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox_pr_pol = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.годРожденияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextBox_pr_godr = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.comboBox_pr_kids = new System.Windows.Forms.ToolStripComboBox();
+            this.детиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            this.зарплатаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TextBox_pr_zarplata = new System.Windows.Forms.ToolStripTextBox();
+            this.сформироватьОтчетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -76,7 +123,7 @@ namespace kursach
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(798, 411);
+            this.dataGridView1.Size = new System.Drawing.Size(615, 411);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseDoubleClick);
@@ -88,10 +135,12 @@ namespace kursach
             this.сортировкаToolStripMenuItem1,
             this.таблицаToolStripMenuItem,
             this.удалениеToolStripMenuItem,
-            this.добавитьСтрокуToolStripMenuItem});
+            this.добавитьСтрокуToolStripMenuItem,
+            this.item1,
+            this.item2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(634, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,11 +156,23 @@ namespace kursach
             this.сортировкаToolStripMenuItem1.Size = new System.Drawing.Size(85, 20);
             this.сортировкаToolStripMenuItem1.Text = "Сортировка";
             // 
+            // колонкаToolStripMenuItem1
+            // 
+            this.колонкаToolStripMenuItem1.Enabled = false;
+            this.колонкаToolStripMenuItem1.Name = "колонкаToolStripMenuItem1";
+            this.колонкаToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.колонкаToolStripMenuItem1.Text = "Колонка";
+            // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(163, 6);
             // 
             // отсортироватьToolStripMenuItem
             // 
@@ -343,23 +404,351 @@ namespace kursach
             this.удалитьСтрокуToolStripMenuItem.Text = "Удалить строку";
             this.удалитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.удалитьСтрокуToolStripMenuItem_Click);
             // 
-            // колонкаToolStripMenuItem1
+            // item1
             // 
-            this.колонкаToolStripMenuItem1.Enabled = false;
-            this.колонкаToolStripMenuItem1.Name = "колонкаToolStripMenuItem1";
-            this.колонкаToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.колонкаToolStripMenuItem1.Text = "Колонка";
+            this.item1.Checked = true;
+            this.item1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.item1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.группаToolStripMenuItem1,
+            this.comboBox_st_Gruppa,
+            this.toolStripSeparator5,
+            this.курсToolStripMenuItem,
+            this.TextBox_st_kurs,
+            this.toolStripSeparator6,
+            this.полToolStripMenuItem,
+            this.comboBox_st_pol,
+            this.toolStripSeparator7,
+            this.годРожденияToolStripMenuItem,
+            this.TextBox_st_godr,
+            this.toolStripSeparator8,
+            this.возрастToolStripMenuItem,
+            this.TextBox_st_vozrast,
+            this.toolStripSeparator9,
+            this.детиToolStripMenuItem,
+            this.comboBox_st_kids,
+            this.toolStripSeparator10,
+            this.стипендияToolStripMenuItem,
+            this.comboBox_st_stipendia,
+            this.TextBox_st_stipendia,
+            this.toolStripSeparator11,
+            this.сформироватьОтчетToolStripMenuItem});
+            this.item1.Name = "item1";
+            this.item1.Size = new System.Drawing.Size(136, 20);
+            this.item1.Text = "Сформировать отчет";
             // 
-            // toolStripSeparator4
+            // item2
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.item2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.кафедраToolStripMenuItem1,
+            this.comboBox_pr_kafedra,
+            this.toolStripSeparator12,
+            this.факультетToolStripMenuItem1,
+            this.comboBox_pr_facultet,
+            this.toolStripSeparator13,
+            this.категорияToolStripMenuItem,
+            this.comboBox_pr_category,
+            this.toolStripSeparator14,
+            this.полToolStripMenuItem1,
+            this.comboBox_pr_pol,
+            this.toolStripSeparator15,
+            this.годРожденияToolStripMenuItem1,
+            this.TextBox_pr_godr,
+            this.toolStripSeparator16,
+            this.детиToolStripMenuItem1,
+            this.comboBox_pr_kids,
+            this.toolStripSeparator17,
+            this.зарплатаToolStripMenuItem,
+            this.TextBox_pr_zarplata,
+            this.toolStripSeparator18,
+            this.сформироватьОтчетToolStripMenuItem1});
+            this.item2.Name = "item2";
+            this.item2.Size = new System.Drawing.Size(136, 20);
+            this.item2.Text = "Сформировать отчет";
+            this.item2.Visible = false;
+            // 
+            // группаToolStripMenuItem1
+            // 
+            this.группаToolStripMenuItem1.Enabled = false;
+            this.группаToolStripMenuItem1.Name = "группаToolStripMenuItem1";
+            this.группаToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.группаToolStripMenuItem1.Text = "Группа";
+            // 
+            // comboBox_st_Gruppa
+            // 
+            this.comboBox_st_Gruppa.Name = "comboBox_st_Gruppa";
+            this.comboBox_st_Gruppa.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(188, 6);
+            // 
+            // курсToolStripMenuItem
+            // 
+            this.курсToolStripMenuItem.Enabled = false;
+            this.курсToolStripMenuItem.Name = "курсToolStripMenuItem";
+            this.курсToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.курсToolStripMenuItem.Text = "Курс";
+            // 
+            // TextBox_st_kurs
+            // 
+            this.TextBox_st_kurs.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_st_kurs.Name = "TextBox_st_kurs";
+            this.TextBox_st_kurs.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(188, 6);
+            // 
+            // полToolStripMenuItem
+            // 
+            this.полToolStripMenuItem.Enabled = false;
+            this.полToolStripMenuItem.Name = "полToolStripMenuItem";
+            this.полToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.полToolStripMenuItem.Text = "пол";
+            this.полToolStripMenuItem.Visible = false;
+            // 
+            // comboBox_st_pol
+            // 
+            this.comboBox_st_pol.Items.AddRange(new object[] {
+            "Мужской",
+            "Женский"});
+            this.comboBox_st_pol.Name = "comboBox_st_pol";
+            this.comboBox_st_pol.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(188, 6);
+            // 
+            // годРожденияToolStripMenuItem
+            // 
+            this.годРожденияToolStripMenuItem.Enabled = false;
+            this.годРожденияToolStripMenuItem.Name = "годРожденияToolStripMenuItem";
+            this.годРожденияToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.годРожденияToolStripMenuItem.Text = "Год рождения";
+            // 
+            // TextBox_st_godr
+            // 
+            this.TextBox_st_godr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_st_godr.Name = "TextBox_st_godr";
+            this.TextBox_st_godr.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(188, 6);
+            // 
+            // возрастToolStripMenuItem
+            // 
+            this.возрастToolStripMenuItem.Enabled = false;
+            this.возрастToolStripMenuItem.Name = "возрастToolStripMenuItem";
+            this.возрастToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.возрастToolStripMenuItem.Text = "Возраст";
+            // 
+            // TextBox_st_vozrast
+            // 
+            this.TextBox_st_vozrast.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_st_vozrast.Name = "TextBox_st_vozrast";
+            this.TextBox_st_vozrast.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(188, 6);
+            // 
+            // детиToolStripMenuItem
+            // 
+            this.детиToolStripMenuItem.Enabled = false;
+            this.детиToolStripMenuItem.Name = "детиToolStripMenuItem";
+            this.детиToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.детиToolStripMenuItem.Text = "Дети";
+            // 
+            // comboBox_st_kids
+            // 
+            this.comboBox_st_kids.Items.AddRange(new object[] {
+            "Есть",
+            "Нету"});
+            this.comboBox_st_kids.Name = "comboBox_st_kids";
+            this.comboBox_st_kids.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(188, 6);
+            // 
+            // стипендияToolStripMenuItem
+            // 
+            this.стипендияToolStripMenuItem.Enabled = false;
+            this.стипендияToolStripMenuItem.Name = "стипендияToolStripMenuItem";
+            this.стипендияToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.стипендияToolStripMenuItem.Text = "Стипендия";
+            // 
+            // comboBox_st_stipendia
+            // 
+            this.comboBox_st_stipendia.Items.AddRange(new object[] {
+            "Есть",
+            "Нету"});
+            this.comboBox_st_stipendia.Name = "comboBox_st_stipendia";
+            this.comboBox_st_stipendia.Size = new System.Drawing.Size(121, 23);
+            // 
+            // TextBox_st_stipendia
+            // 
+            this.TextBox_st_stipendia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_st_stipendia.Name = "TextBox_st_stipendia";
+            this.TextBox_st_stipendia.Size = new System.Drawing.Size(100, 23);
+            this.TextBox_st_stipendia.ToolTipText = "Размер стипендии";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(188, 6);
+            // 
+            // сформироватьОтчетToolStripMenuItem
+            // 
+            this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
+            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.сформироватьОтчетToolStripMenuItem.Text = "Сформировать отчет";
+            // 
+            // кафедраToolStripMenuItem1
+            // 
+            this.кафедраToolStripMenuItem1.Enabled = false;
+            this.кафедраToolStripMenuItem1.Name = "кафедраToolStripMenuItem1";
+            this.кафедраToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.кафедраToolStripMenuItem1.Text = "Кафедра";
+            // 
+            // comboBox_pr_kafedra
+            // 
+            this.comboBox_pr_kafedra.Name = "comboBox_pr_kafedra";
+            this.comboBox_pr_kafedra.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(178, 6);
+            // 
+            // факультетToolStripMenuItem1
+            // 
+            this.факультетToolStripMenuItem1.Enabled = false;
+            this.факультетToolStripMenuItem1.Name = "факультетToolStripMenuItem1";
+            this.факультетToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.факультетToolStripMenuItem1.Text = "Факультет";
+            // 
+            // comboBox_pr_facultet
+            // 
+            this.comboBox_pr_facultet.Name = "comboBox_pr_facultet";
+            this.comboBox_pr_facultet.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(178, 6);
+            // 
+            // категорияToolStripMenuItem
+            // 
+            this.категорияToolStripMenuItem.Enabled = false;
+            this.категорияToolStripMenuItem.Name = "категорияToolStripMenuItem";
+            this.категорияToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.категорияToolStripMenuItem.Text = "Категория";
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(178, 6);
+            // 
+            // comboBox_pr_category
+            // 
+            this.comboBox_pr_category.Name = "comboBox_pr_category";
+            this.comboBox_pr_category.Size = new System.Drawing.Size(121, 23);
+            // 
+            // полToolStripMenuItem1
+            // 
+            this.полToolStripMenuItem1.Enabled = false;
+            this.полToolStripMenuItem1.Name = "полToolStripMenuItem1";
+            this.полToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.полToolStripMenuItem1.Text = "Пол";
+            // 
+            // comboBox_pr_pol
+            // 
+            this.comboBox_pr_pol.Items.AddRange(new object[] {
+            "Мужской",
+            "Женский"});
+            this.comboBox_pr_pol.Name = "comboBox_pr_pol";
+            this.comboBox_pr_pol.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(178, 6);
+            // 
+            // годРожденияToolStripMenuItem1
+            // 
+            this.годРожденияToolStripMenuItem1.Enabled = false;
+            this.годРожденияToolStripMenuItem1.Name = "годРожденияToolStripMenuItem1";
+            this.годРожденияToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.годРожденияToolStripMenuItem1.Text = "Год рождения";
+            // 
+            // TextBox_pr_godr
+            // 
+            this.TextBox_pr_godr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_pr_godr.Name = "TextBox_pr_godr";
+            this.TextBox_pr_godr.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(178, 6);
+            // 
+            // comboBox_pr_kids
+            // 
+            this.comboBox_pr_kids.Items.AddRange(new object[] {
+            "Есть",
+            "Нету"});
+            this.comboBox_pr_kids.Name = "comboBox_pr_kids";
+            this.comboBox_pr_kids.Size = new System.Drawing.Size(121, 23);
+            // 
+            // детиToolStripMenuItem1
+            // 
+            this.детиToolStripMenuItem1.Enabled = false;
+            this.детиToolStripMenuItem1.Name = "детиToolStripMenuItem1";
+            this.детиToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.детиToolStripMenuItem1.Text = "Дети";
+            // 
+            // toolStripSeparator17
+            // 
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(178, 6);
+            // 
+            // зарплатаToolStripMenuItem
+            // 
+            this.зарплатаToolStripMenuItem.Enabled = false;
+            this.зарплатаToolStripMenuItem.Name = "зарплатаToolStripMenuItem";
+            this.зарплатаToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.зарплатаToolStripMenuItem.Text = "Зарплата";
+            // 
+            // TextBox_pr_zarplata
+            // 
+            this.TextBox_pr_zarplata.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_pr_zarplata.Name = "TextBox_pr_zarplata";
+            this.TextBox_pr_zarplata.Size = new System.Drawing.Size(100, 23);
+            // 
+            // сформироватьОтчетToolStripMenuItem1
+            // 
+            this.сформироватьОтчетToolStripMenuItem1.Name = "сформироватьОтчетToolStripMenuItem1";
+            this.сформироватьОтчетToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.сформироватьОтчетToolStripMenuItem1.Text = "Сформировать отчет";
+            // 
+            // toolStripSeparator18
+            // 
+            this.toolStripSeparator18.Name = "toolStripSeparator18";
+            this.toolStripSeparator18.Size = new System.Drawing.Size(188, 6);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(634, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -415,5 +804,52 @@ namespace kursach
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem колонкаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem item1;
+        private System.Windows.Forms.ToolStripMenuItem группаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripComboBox comboBox_st_Gruppa;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem курсToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox TextBox_st_kurs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem полToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox comboBox_st_pol;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem годРожденияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox TextBox_st_godr;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem возрастToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox TextBox_st_vozrast;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem детиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox comboBox_st_kids;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripMenuItem стипендияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox comboBox_st_stipendia;
+        private System.Windows.Forms.ToolStripTextBox TextBox_st_stipendia;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem item2;
+        private System.Windows.Forms.ToolStripMenuItem кафедраToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripComboBox comboBox_pr_kafedra;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripMenuItem факультетToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripComboBox comboBox_pr_facultet;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripMenuItem категорияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox comboBox_pr_category;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private System.Windows.Forms.ToolStripMenuItem полToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripComboBox comboBox_pr_pol;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripMenuItem годРожденияToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripTextBox TextBox_pr_godr;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripMenuItem детиToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripComboBox comboBox_pr_kids;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
+        private System.Windows.Forms.ToolStripMenuItem зарплатаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox TextBox_pr_zarplata;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
+        private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem1;
     }
 }
