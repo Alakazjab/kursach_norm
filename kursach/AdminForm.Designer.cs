@@ -113,6 +113,9 @@ namespace kursach
             this.TextBox_pr_zarplata = new System.Windows.Forms.ToolStripTextBox();
             this.сформироватьОтчетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -123,7 +126,7 @@ namespace kursach
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(615, 411);
+            this.dataGridView1.Size = new System.Drawing.Size(819, 411);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseDoubleClick);
@@ -140,7 +143,7 @@ namespace kursach
             this.item2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(634, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(821, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -507,7 +510,6 @@ namespace kursach
             this.полToolStripMenuItem.Name = "полToolStripMenuItem";
             this.полToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.полToolStripMenuItem.Text = "пол";
-            this.полToolStripMenuItem.Visible = false;
             // 
             // comboBox_st_pol
             // 
@@ -607,9 +609,12 @@ namespace kursach
             // 
             // сформироватьОтчетToolStripMenuItem
             // 
+            this.сформироватьОтчетToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьToolStripMenuItem});
             this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
             this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.сформироватьОтчетToolStripMenuItem.Text = "Сформировать отчет";
+            this.сформироватьОтчетToolStripMenuItem.Click += new System.EventHandler(this.сформироватьОтчетToolStripMenuItem_Click);
             // 
             // кафедраToolStripMenuItem1
             // 
@@ -659,6 +664,12 @@ namespace kursach
             // 
             // comboBox_pr_category
             // 
+            this.comboBox_pr_category.Items.AddRange(new object[] {
+            "Ассистент",
+            "Преподаватель",
+            "Старший преподаватель",
+            "Доцент",
+            "Профессор"});
             this.comboBox_pr_category.Name = "comboBox_pr_category";
             this.comboBox_pr_category.Size = new System.Drawing.Size(121, 23);
             // 
@@ -735,20 +746,41 @@ namespace kursach
             // 
             // сформироватьОтчетToolStripMenuItem1
             // 
+            this.сформироватьОтчетToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьToolStripMenuItem1});
             this.сформироватьОтчетToolStripMenuItem1.Name = "сформироватьОтчетToolStripMenuItem1";
             this.сформироватьОтчетToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.сформироватьОтчетToolStripMenuItem1.Text = "Сформировать отчет";
+            this.сформироватьОтчетToolStripMenuItem1.Click += new System.EventHandler(this.сформироватьОтчетToolStripMenuItem1_Click);
             // 
             // toolStripSeparator18
             // 
             this.toolStripSeparator18.Name = "toolStripSeparator18";
             this.toolStripSeparator18.Size = new System.Drawing.Size(188, 6);
             // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem1_Click);
+            // 
+            // сохранитьToolStripMenuItem1
+            // 
+            this.сохранитьToolStripMenuItem1.Name = "сохранитьToolStripMenuItem1";
+            this.сохранитьToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem1.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem1.Click += new System.EventHandler(this.сохранитьToolStripMenuItem1_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "pdf files (*.pdf)|*.pdf";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 450);
+            this.ClientSize = new System.Drawing.Size(821, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -851,5 +883,8 @@ namespace kursach
         private System.Windows.Forms.ToolStripTextBox TextBox_pr_zarplata;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

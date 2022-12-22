@@ -1,4 +1,6 @@
-﻿using kursach.Properties;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using kursach.Properties;
 using Npgsql;
 using System;
 using System.Collections;
@@ -7,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,13 +41,38 @@ namespace kursach
             con.Open();
             NpgsqlDataReader rdr = cmd.ExecuteReader();
             ArrayList records = new ArrayList();
+            ArrayList datarec = new ArrayList();
             if (rdr.HasRows)
                 foreach (DbDataRecord rec in rdr)
                     //dataSet1.Tables.(rec);
-                    records.Add(rec);
+                    datarec.Add(rec);
+            dataGridView1.DataSource = datarec;
+            rdr.Close();
+            cmd.CommandText = $"select * from kursach.facultet_nazv;";
+            rdr = cmd.ExecuteReader();
+            records.Clear();
+            if (rdr.HasRows)
+                foreach (DbDataRecord rec in rdr)
+                    //dataSet1.Tables.(rec);
+                    comboBox_pr_facultet.Items.Add(rec.GetString(0));
+            rdr.Close();
+            cmd.CommandText = $"select * from kursach.kafedra_nazv;";
+            rdr = cmd.ExecuteReader();
+            records.Clear();
+            if (rdr.HasRows)
+                foreach (DbDataRecord rec in rdr)
+                    //dataSet1.Tables.(rec);
+                    comboBox_pr_kafedra.Items.Add(rec.GetString(0));
+            rdr.Close();
+            cmd.CommandText = $"select * from kursach.gruppa_nazv;";
+            rdr = cmd.ExecuteReader();
+            records.Clear();
+            if (rdr.HasRows)
+                foreach (DbDataRecord rec in rdr)
+                    //dataSet1.Tables.(rec);
+                    comboBox_st_Gruppa.Items.Add(rec.GetString(0));
             con.Close();
-            dataGridView1.DataSource = records;
-            
+
         }
         private void сортировкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -86,50 +114,74 @@ namespace kursach
         private void дипломToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("diplom_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void факультетToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("facultet_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void группаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("gruppa_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void кафедраToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("kafedra_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void количествоЧасовToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("kolichestvo_chasov_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void оценкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("ocenki_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("sotrudnik_1");
+            item1.Visible = false;
+            item2.Visible = true;
         }
         private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("student_1");
+            item1.Visible = true;
+            item2.Visible = false;
         }
         private void учебнаяНагрузкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("ychebnaya_nagruzka_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void учебныйПланToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("ychebniy_plan_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void защитаКатегорииToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("zashita_kategorii_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             select_table("users_1");
+            item1.Visible = false;
+            item2.Visible = false;
         }
         private void применитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -415,6 +467,134 @@ namespace kursach
                 result = MessageBox.Show(message, caption, buttons);
             }
         }
+
+        private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comm = $"select * from kursach.student_1 where \"Код\" is not null";
+                NpgsqlConnection con = new NpgsqlConnection();
+                con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = con;
+
+                if (comboBox_st_Gruppa.Text != "") comm += $" and \"Группа\" = '{comboBox_st_Gruppa.SelectedIndex}'";
+                else if (TextBox_st_kurs.Text != "") comm += $" and \"Курс\" = '{TextBox_st_kurs.Text}'";
+                else if (comboBox_st_pol.Text != "") comm += $" and \"Пол\" = '{(comboBox_st_pol.Text == "Мужской" ? "m" : "f")}'";
+                else if (TextBox_st_godr.Text != "") comm += $" and extract(year from \"Дата рождения\") = '{TextBox_st_godr.Text}'";
+                else if (TextBox_st_vozrast.Text != "") comm += $" and extract(year from age(current_date,\"Дата рождения\"))  = '{TextBox_st_vozrast.Text}'";
+                else if (comboBox_st_kids.Text != "") comm += $" and \"Наличие детей\" = '{(comboBox_st_kids.Text == "Есть" ? "1" : "0")}'";
+                else if (comboBox_st_stipendia.Text != "") comm += $" and \"Стипендия\" {(comboBox_st_stipendia.Text == "Есть" ? " > 0" : " = 0")}";
+                else if (TextBox_st_stipendia.Text != "") comm += $" and \"Стипендия\" = {TextBox_st_stipendia.Text}";
+                comm += ";";
+
+                cmd.CommandText = comm;
+                con.Open();
+                NpgsqlDataReader rdr = cmd.ExecuteReader();
+                ArrayList records = new ArrayList();
+                if (rdr.HasRows)
+                    foreach (DbDataRecord rec in rdr)
+                        records.Add(rec);
+                con.Close();
+                dataGridView1.DataSource = records;
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Ошибка выборки";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void сформироватьОтчетToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comm = $"select * from kursach.sotrudnik_1 where \"Код\" is not null";
+                NpgsqlConnection con = new NpgsqlConnection();
+                con.ConnectionString = "Server = 172.20.8.6;Port=5432;User Id=st0901;Password=pwd0901;Database=st0901_08";
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = con;
+
+                if (comboBox_pr_kafedra.Text != "") comm += $" and \"Кафедра\" = '{comboBox_pr_kafedra.SelectedIndex}'";
+                else if (comboBox_pr_facultet.Text != "") comm += $" and \"Факультет\" = '{comboBox_pr_facultet.SelectedIndex}'";
+                else if (comboBox_pr_category.Text != "") comm += $" and \"Категория\" = '{comboBox_pr_category.Text}'";
+                else if (comboBox_pr_pol.Text != "") comm += $" and \"Пол\" = '{(comboBox_pr_pol.Text == "Мужской" ? "m" : "f")}'";
+                else if (TextBox_pr_godr.Text != "") comm += $" and extract(year from \"Дата рождения\") = '{TextBox_pr_godr.Text}'";
+                else if (comboBox_pr_kids.Text != "") comm += $" and \"Наличие детей\" = '{(comboBox_pr_kids.Text == "Есть" ? "1" : "0")}'";
+                else if (TextBox_pr_zarplata.Text != "") comm += $" and \"Зарплата\" = {TextBox_pr_zarplata.Text}";
+                comm += ";";
+
+                cmd.CommandText = comm;
+                con.Open();
+                NpgsqlDataReader rdr = cmd.ExecuteReader();
+                ArrayList records = new ArrayList();
+                if (rdr.HasRows)
+                    foreach (DbDataRecord rec in rdr)
+                        records.Add(rec);
+                con.Close();
+                dataGridView1.DataSource = records;
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Ошибка выборки";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PdfPTable table = new PdfPTable(dataGridView1.ColumnCount);
+
+            string FONT_LOCATION = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.ttf");
+            BaseFont baseFont = BaseFont.CreateFont(FONT_LOCATION, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font text = new iTextSharp.text.Font(baseFont, 14, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                table.AddCell(cell);
+            }
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    if (j == 4)
+                    {
+                        PdfPCell cell = new PdfPCell(new Phrase(dataGridView1.Rows[i].Cells[j].Value.ToString(), text));
+                        table.AddCell(cell);
+                    }
+                    else
+                    {
+                        PdfPCell cell = new PdfPCell(new Phrase(dataGridView1.Rows[i].Cells[j].Value.ToString(), text));
+                        table.AddCell(cell);
+                    }
+                }
+            }
+            // сохранение файла
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                    return;
+                // получаем выбранный файл
+                string filename = saveFileDialog1.FileName;
+                // сохраняем текст в файл
+            using (FileStream stream = new FileStream(filename, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 10f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(table);
+                pdfDoc.Close();
+                stream.Close();
+            }
+            MessageBox.Show("Файл сохранен");
+        }
     }
-    
 }
